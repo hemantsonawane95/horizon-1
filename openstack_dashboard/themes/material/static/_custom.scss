@@ -1,8 +1,8 @@
 .btn-default:hover{
-background: #ed7f20
+background: #ed7f20;
 }
 .btn-danger{
-background: #ed7f20
+background: #ed7f20;
 }
 .btn-primary{
 background: #ed7f20;
@@ -17,7 +17,7 @@ background: #2093f5;
 .datepicker table tr td.day:hover, .datepicker table tr td.day.focused {
     background: #ed7f20;
     cursor: pointer;
-    color: #ed7f20;
+    color: #FFFFFF;
 }
 
 .login form .panel-default > .panel-heading {
@@ -88,15 +88,15 @@ background: #ECF0F1;
     background-color: #ed7f20;
 }
 
-
 #sidebar .openstack-dashboard > a:focus, #sidebar .openstack-panel > a:focus, #sidebar .nav-header > a:focus {
     background-color: #ed7f20;
     outline: 0;
 }
 
 .navbar-brand img {
-    height: 63px;
-    width: 63px;
+    height: 40px;
+    width: 150px;
+    margin-bottom: 10px;
 }
 
 .navbar-inverse .md-hamburger-layer:hover {
@@ -442,4 +442,10 @@ color: #000000;
 }
 ::placeholder{
 color: #000000;
+}
+.progress-bar-success:last-child.progress-bar:before{
+    background-color: #ed7f20;
+}
+.progress-bar-success {
+    background-color: #ed5020;
 }
