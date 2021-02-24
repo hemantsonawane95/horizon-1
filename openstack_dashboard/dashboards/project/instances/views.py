@@ -214,7 +214,7 @@ class IndexView(tables.PagedTableMixin, tables.DataTableView):
             # There is a case where volume_image_metadata contains
             # only fields other than 'image_id' (See bug 1834747),
             # so we try to populate image information only when it is found.
-            if not hasattr(boot_volume, 'volume_image_metadata'):
+            if not hasattr(boot_volume, "volume_image_metadata"):
                 return
             volume_metadata = getattr(boot_volume, "volume_image_metadata", {})
             image_id = volume_metadata.get('image_id')
