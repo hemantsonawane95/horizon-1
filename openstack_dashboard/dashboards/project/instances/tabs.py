@@ -40,12 +40,19 @@ class OverviewTab(tabs.Tab):
             try:
                 volume = api.cinder.volume_get(
                     self.request, volume_id=instance.volumes[0].volumeId)
-                instance.image = {
-                    'id': volume.volume_image_metadata['image_id'],
-                    'name': volume.volume_image_metadata['image_name']}
             except Exception:
                 exceptions.handle(self.request,
                                   _('Failed to get attached volume.'))
+            try:
+                instance.image = {
+                    'id': volume.volume_image_metadata['image_id'],
+                    'name': volume.volume_image_metadata['image_name'],
+                }
+            except AttributeError:
+                # volume_image_metadata does not exist, e.g., when a volume
+                # used for the server was created before volume_image_metadata
+                # feature was implemented.
+                instance.image = None
         return {"instance": instance}
 
 
